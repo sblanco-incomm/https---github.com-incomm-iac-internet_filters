@@ -1,0 +1,10 @@
+config
+router bgp {{ asn }}
+template peer {{ peer_template }}
+address-family ipv4 unicast
+filter-list 66 in
+filter-list 66 out
+exit
+wr
+sh ip bgp neighbors {{ neig }} received-routes | last 3
+sh ip bgp neighbors {{ neig }} advertised-routes | last 8

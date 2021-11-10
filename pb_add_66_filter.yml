@@ -1,0 +1,51 @@
+# playbook to add as path filters to bgp peering
+# syntax  ansible-playbook pb_add_66_filter.yml
+# result files can be found on ./results
+#
+- name: BGP peering filter
+  hosts: all
+  connection: local
+  gather_facts: no
+  vars:
+    datetime: "{{ lookup('pipe', 'date +%Y-%m-%d') }} {{ lookup('pipe', 'date +%H:%M') }}"
+  
+  vars_prompt:
+
+    - name: ansible_user
+      prompt: Username
+      private: no
+
+    - name: ansible_password
+      prompt: Password
+      confirm: yes
+ 
+ 
+  tasks:
+       
+    - block:
+      - name: Creating the config
+        template:
+          src: "./templates/nxos_add_66_filter.j2"
+          dest: "./configs/{{ inventory_hostname }}_config.txt"
+          force: yes
+      
+      - name: Read the config from a file
+        slurp:
+          src: ./configs/{{ inventory_hostname }}_config.txt
+        register: validations
+
+      - name: Show commands
+        debug:
+          msg: "{{ validations['content'] | b64decode }}"
+      
+      # - name: Push commands
+      #   nxos_command:
+      #     commands: "{{ validations['content'] | b64decode }}"
+      #   register: results
+
+      # - name: Copy results to file
+      #   copy:
+      #     content: "{{ inventory_hostname }} {{ datetime}}\n {{ results.stdout[0] | replace('\\n', '\n') }}"        
+      #     dest: "./results/{{ inventory_hostname }}.txt"
+
+      when: ansible_network_os == 'nxos'

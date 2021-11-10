@@ -1,0 +1,10 @@
+config
+router bgp 399257
+template peer VZ_Internet
+address-family ipv4 unicast
+filter-list 66 in
+filter-list 66 out
+exit
+wr
+sh ip bgp neighbors 204.148.79.197 received-routes | last 3
+sh ip bgp neighbors 204.148.79.197 advertised-routes | last 8

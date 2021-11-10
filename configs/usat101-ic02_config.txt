@@ -1,0 +1,10 @@
+config
+router bgp 398453
+template peer EQX_Internet
+address-family ipv4 unicast
+no filter-list 66 in
+no filter-list 66 out
+exit
+wr
+sh ip bgp neighbors 149.97.135.33 received-routes | last 3
+sh ip bgp neighbors 149.97.135.33 advertised-routes | last 8
