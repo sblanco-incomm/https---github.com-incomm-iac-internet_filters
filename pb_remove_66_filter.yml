@@ -37,14 +37,14 @@
         debug:
           msg: "{{ validations['content'] | b64decode }}"
       
-      # - name: Push commands
-      #   nxos_command:
-      #     commands: "{{ validations['content'] | b64decode }}"
-      #   register: results
+      - name: Push commands
+        nxos_command:
+          commands: "{{ validations['content'] | b64decode }}"
+        register: results
 
-      # - name: Copy results to file
-      #   copy:
-      #     content: "{{ inventory_hostname }} {{ datetime}}\n {{ results.stdout[0] | replace('\\n', '\n') }}"        
-      #     dest: "./results/{{ inventory_hostname }}.txt"
+      - name: Copy results to file
+        copy:
+          content: "{{ inventory_hostname }} {{ datetime}}\n {{ results.stdout[0] | replace('\\n', '\n') }}"        
+          dest: "./results/{{ inventory_hostname }}.txt"
 
       when: ansible_network_os == 'nxos'
