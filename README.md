@@ -1,6 +1,6 @@
-#Playbooks to filter and un-filter internet BGP peering.
+<h1 id="snow-normal_chg-api">Playbooks to filter and un-filter internet BGP peering.</h1>
 
-Automate the application and removal of a filter to an Internet provider on a cisco device.
+##Automate the application and removal of a filter to an Internet provider on a cisco device.
 Two playbooks have been created to automate these activities:
 
 pb_add_66_filter.yml - This playbook adds the as-path filter 66 in an out to a bgp peering, base on the information provided on the inventory file.
@@ -34,7 +34,7 @@ peer_template = EQX_Internet
 
 In order to facilitate the execution of this changes, several bash files were created, specifically for Internet providers used in carrier exchange datacenters.
 
-#List of bash files.
+##List of bash files.
 
 filter_eqx_at1.sh	 - Add the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
 un-filter_eqx_at1.sh	- Remove the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
