@@ -23,21 +23,21 @@
   tasks:
        
     - block:
-      - name: Creating the config
+      - name: Creating the nxos config
         template:
           src: "./templates/nxos_remove_66_filter.j2"
           dest: "./configs/{{ inventory_hostname }}_config.txt"
       
-      - name: Read the config from a file
+      - name: Read the nxos config from a file
         slurp:
           src: ./configs/{{ inventory_hostname }}_config.txt
         register: validations
 
-      - name: Show commands
+      - name: Show nxos commands
         debug:
           msg: "{{ validations['content'] | b64decode }}"
       
-      - name: Push commands
+      - name: Push nxos commands
         nxos_command:
           commands: "{{ validations['content'] | b64decode }}"
         register: results
@@ -50,22 +50,22 @@
       when: ansible_network_os == 'nxos'
 
     - block:
-      - name: Creating the config
+      - name: Creating the ios config
         template:
           src: "./templates/ios_remove_66_filter.j2"
           dest: "./configs/{{ inventory_hostname }}_config.txt"
           force: yes
       
-      - name: Read the config from a file
+      - name: Read the ios config from a file
         slurp:
           src: ./configs/{{ inventory_hostname }}_config.txt
         register: validations
 
-      - name: Show commands
+      - name: Show ios commands
         debug:
           msg: "{{ validations['content'] | b64decode }}"
       
-      - name: Push commands
+      - name: Push ios commands
         nxos_command:
           commands: "{{ validations['content'] | b64decode }}"
         register: results

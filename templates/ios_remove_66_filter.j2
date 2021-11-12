@@ -5,5 +5,5 @@ no nei {{ neig }} filter-list 66 in
 no nei {{ neig }} filter-list 66 out
 exit
 wr
-sh ip bgp neighbors {{ neig }} received-routes | last 3
-sh ip bgp neighbors {{ neig }} advertised-routes | last 8
+sh ip bgp neighbors {{ neig }} received-routes
+sh ip bgp neighbors {{ neig }} advertised-routes
