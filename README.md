@@ -58,21 +58,45 @@ In order to facilitate the execution of this changes, several bash files were cr
 
 ## List of bash files.
 
-filter_eqx_at1.sh	 - Add the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
+filter_eqx_at1.sh - Add the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
 
-un-filter_eqx_at1.sh	- Remove the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
+un-filter_eqx_at1.sh - Remove the 66 filters to both Internet Core switches in AT1 on the connections to Equinix.
 
-filter_vz_at1.sh	- Add the 66 filters Internet Core switch 1  in AT1 on the connections to Verizon.
+filter_vz_at1.sh - Add the 66 filters Internet Core switch 1  in AT1 on the connections to Verizon.
 
-un-filter_vz_at1.sh -	Remove the 66 filters Internet Core switch 1  in AT1 on the connections to Verizon.
+un-filter_vz_at1.sh - Remove the 66 filters Internet Core switch 1  in AT1 on the connections to Verizon.
 
-filter_eqx_dc12.sh	- Add the 66 filters to both Internet Core switches in DC12 on the connections to Equinix.
+filter_eqx_dc12.sh - Add the 66 filters to both Internet Core switches in DC12 on the connections to Equinix.
 
-un-filter_eqx_dc12.sh	- Remove the 66 filters to both Internet Core switches in DC12 on the connections to Equinix.
+un-filter_eqx_dc12.sh - Remove the 66 filters to both Internet Core switches in DC12 on the connections to Equinix.
 
-filter_vz_dc12.sh	- Add the 66 filters Internet Core switch 1  in DC12 on the connections to Verizon.
+filter_vz_dc12.sh - Add the 66 filters Internet Core switch 1  in DC12 on the connections to Verizon.
 
-un-filter_vz_at1.sh	- Remove the 66 filters Internet Core switch 1  in DC12 on the connections to Verizon.
+un-filter_vz_at1.sh - Remove the 66 filters Internet Core switch 1  in DC12 on the connections to Verizon.
+
+filter_h5_den.sh - Add the 66 filters Internet Core switches in Denver on the connections to H5.
+
+un-filter_h5_den.sh - Remove the 66 filters Internet Core switches in Denver on the connections to H5.
+
+filter_l3_den.sh - Add the 66 filters Internet Core switches in Denver on the connections to Level 3.
+
+un-filter_l3_den.sh - Remove the 66 filters Internet Core switches in Denver on the connections to Level 3.
+
+filter_l3_atl.sh - Add the 66 filters Internet Core switches in 250 on the connections to Level 3.
+
+un-filter_l3_atl.sh - Remove the 66 filters Internet Core switches in 250 on the connections to Level 3.
+
+filter_vz_atl.sh - Add the 66 filters Internet Core switches in 250 on the connections to Verizon.
+
+un-filter_vz_atl.sh - Remove the 66 filters Internet Core switches in 250 on the connections to Verizon.
+
+filter_L3_qts.sh - Add the 66 filters Internet Core switches in QTS on the connections to Level 3.
+
+un-filter_L3_qts.sh - Remove the 66 filters Internet Core switches in QTS on the connections to Level 3.
+
+filter_ntt_qts.sh - Add the 66 filters Internet Core switches in QTS on the connections to NTT.
+
+un-filter_ntt_qts.sh - Remove the 66 filters Internet Core switches in QTS on the connections to NTT.
 
 
 All files generate outputs on the folder results.
