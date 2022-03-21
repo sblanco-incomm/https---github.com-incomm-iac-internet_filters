@@ -75,6 +75,6 @@
           content: "{{ inventory_hostname }} {{ datetime}}\n {{ results.stdout[0] | replace('\\n', '\n') }}"        
           dest: "./results/{{ inventory_hostname }}.txt"
 
-    when: ansible_network_os == 'ios'
+      when: ansible_network_os == 'ios'
 
 

@@ -1,0 +1,9 @@
+config t
+router bgp 26224
+address-family ipv4 unicast
+no nei 4.71.20.25 filter-list 66 in
+no nei 4.71.20.25 filter-list 66 out
+exit
+wr
+sh ip bgp neighbors 4.71.20.25 received-routes
+sh ip bgp neighbors 4.71.20.25 advertised-routes
