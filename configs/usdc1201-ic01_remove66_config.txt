@@ -1,0 +1,10 @@
+config
+router bgp 399257
+neighbor 149.97.228.21
+address-family ipv4 unicast
+no filter-list 66 in
+no filter-list 66 out
+exit
+wr
+sh ip bgp neighbors 149.97.228.21 received-routes | last 3
+sh ip bgp neighbors 149.97.228.21 advertised-routes | last 8

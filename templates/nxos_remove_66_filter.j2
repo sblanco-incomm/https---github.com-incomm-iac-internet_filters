@@ -1,6 +1,10 @@
 config
 router bgp {{ asn }}
+{% if peer_template  == "none" or peer_template|length == 0 %}
+neighbor {{ neig }}
+{% else %}
 template peer {{ peer_template }}
+{% endif %}
 address-family ipv4 unicast
 no filter-list 66 in
 no filter-list 66 out
