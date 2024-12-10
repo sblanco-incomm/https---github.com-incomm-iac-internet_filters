@@ -1,6 +1,10 @@
 config t
 router bgp {{ asn }}
+{% if vrf  != "none" or vrf|length != 0 %}
+address-family ipv4 unicast vrf {{ vrf }}
+{% else %}
 address-family ipv4 unicast
+{% endif %}
 nei {{ neig }} filter-list 66 in
 nei {{ neig }} filter-list 66 out
 exit
